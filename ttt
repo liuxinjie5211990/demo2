@@ -1,0 +1,68 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Main {
+    public static void main(String[] args) {
+        // 创建 JFrame 窗口
+        JFrame frame = new JFrame("参数输入");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300, 200);
+        frame.setLayout(new GridLayout(4, 2));
+
+        // 创建三个标签和三个文本字段
+        JLabel label1 = new JLabel("参数1:");
+        JTextField textField1 = new JTextField();
+
+        JLabel label2 = new JLabel("参数2:");
+        JTextField textField2 = new JTextField();
+
+        JLabel label3 = new JLabel("参数3:");
+        JTextField textField3 = new JTextField();
+
+        // 创建确定按钮
+        JButton button = new JButton("确定");
+
+        // 添加组件到框架
+        frame.add(label1);
+        frame.add(textField1);
+        frame.add(label2);
+        frame.add(textField2);
+        frame.add(label3);
+        frame.add(textField3);
+        frame.add(button);
+
+        // 确定按钮点击事件
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 获取文本字段的值
+                String param1 = textField1.getText();
+                String param2 = textField2.getText();
+                String param3 = textField3.getText();
+
+                // 打印参数值（进行下一步操作）
+                System.out.println("参数1: " + param1);
+                System.out.println("参数2: " + param2);
+                System.out.println("参数3: " + param3);
+
+                // 关闭窗口
+                frame.dispose();
+
+                // 进行下一步操作
+                nextStep(param1, param2, param3);
+            }
+        });
+
+        // 设置窗口可见
+        frame.setVisible(true);
+    }
+
+    // 下一步操作的方法
+    public static void nextStep(String param1, String param2, String param3) {
+        // 在这里实现你的下一步操作
+        System.out.println("下一步操作执行中...");
+        // 可以根据需要在这里使用参数执行相应的逻辑
+    }
+}
